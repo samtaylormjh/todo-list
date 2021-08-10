@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+### Coding Challenge Guidelines
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+MJH Engineering Ltd Code Challenge - Task List
 
-## Available Scripts
+The challenge is to create a basic Task List using react and redux (Using a actions/reducer pattern).
+Please fork this repo and send me a email with a link to your fork when you want to submit it.
 
-In the project directory, you can run:
+For this challenge please use the api https://jsonplaceholder.typicode.com/, to get/post/patch data in json format.
+This is a "to do list" api, but it is close enough for the purpose.
+You will need to add a Promise based HTTP client, of your choosing. e.g axios or fetch
 
-### `npm start`
+Please create the following pages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Index, showing a list of Tasks
+2. New page, where you can create a new task
+3. Edit page, where you can update a task
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The form inputs should be title/body, you can set the userId=1.
+The title should be a required field.
 
-### `npm test`
+This git repo has a basic create-react-app bootstrapped into it.
+Please fork this repo and then clone and run "npm install" followed by "npm start"/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Evaluation Criteria
 
-### `npm run build`
+You can use a basic React UI framework to achieve some styling, but dont spend too much time on this.
+Structure and clean code is the most important criteria.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Useful Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://jsonplaceholder.typicode.com/ - API Docs
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+https://jsonplaceholder.typicode.com/guide/ - API Doc guides
 
-### `npm run eject`
+https://reactjs.org/docs/create-a-new-react-app.html
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### CodeSubmit
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+There is no time limit on this, but please try to keep it down to a few hours, and if you cant get there just push an attempt and i will still look at it.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Please organize, design, test and document your code as if it were
+going into production - then push your changes to the master branch.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If you have any questions, please dont hesitate to contact myself, kyle@mjh.co.nz
 
-## Learn More
+All the best,
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Kyle Hammond
