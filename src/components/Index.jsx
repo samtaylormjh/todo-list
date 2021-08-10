@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Container, Button, Table, Input } from "reactstrap";
+import { Container, Button, Table } from "reactstrap";
 import { connect } from "react-redux";
 import { getTodos, deleteTodo } from "./actions";
 import _ from "lodash";
@@ -11,11 +11,12 @@ function mapStateToProps(state) {
 
 function Index(props) {
   useEffect(() => {
-    if (props.todos.length == 0) {
-      console.log("make api call");
+    if (props.todos.length === 0) {
       props.getTodos();
     }
   }, []);
+
+  let sortedTodos = _.sortBy(props.todos, "id").reverse();
 
   return (
     <Container>
@@ -32,7 +33,7 @@ function Index(props) {
           </tr>
         </thead>
         <tbody>
-          {_.map(props.todos, (todo) => (
+          {_.map(sortedTodos, (todo) => (
             <Todo key={todo.id} todo={todo} deleteTodo={props.deleteTodo} />
           ))}
         </tbody>
@@ -54,7 +55,9 @@ function Todo(props) {
       <td>{todo.title}</td>
       <td>{todo.id}</td>
       <td>
-        <Button>Edit</Button>{" "}
+        <Link to={`/${todo.id}/edit`}>
+          <Button>Edit</Button>
+        </Link>{" "}
         <Button
           color="danger"
           onClick={() => {
