@@ -11,7 +11,10 @@ function mapStateToProps(state) {
 
 function Index(props) {
   useEffect(() => {
-    props.getTodos();
+    if (props.todos.length == 0) {
+      console.log("make api call");
+      props.getTodos();
+    }
   }, []);
 
   return (
@@ -42,12 +45,12 @@ export default connect(mapStateToProps, { getTodos, deleteTodo })(Index);
 
 function Todo(props) {
   const todo = props.todo;
-
+  if (todo.completed === true) {
+    todo.completed = <div>&#10003;</div>;
+  }
   return (
     <tr>
-      <td>
-        <Input type="checkbox" />
-      </td>
+      <td>{todo.completed}</td>
       <td>{todo.title}</td>
       <td>{todo.id}</td>
       <td>

@@ -28,7 +28,9 @@ export default function TodoForm(props) {
             />
           </Col>
         </FormGroup>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" onClick={props.handleSubmit}>
+          Submit
+        </Button>
       </Container>
     </div>
   );
