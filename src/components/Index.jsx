@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, Table, Input } from "reactstrap";
 import { connect } from "react-redux";
-import { getTodos } from "./actions";
+import { getTodos, deleteTodo } from "./actions";
 import _ from "lodash";
 
 function mapStateToProps(state) {
@@ -30,7 +30,7 @@ function Index(props) {
         </thead>
         <tbody>
           {_.map(props.todos, (todo) => (
-            <Todo key={todo.id} todo={todo} />
+            <Todo key={todo.id} todo={todo} deleteTodo={props.deleteTodo} />
           ))}
         </tbody>
       </Table>
@@ -38,7 +38,7 @@ function Index(props) {
   );
 }
 
-export default connect(mapStateToProps, { getTodos })(Index);
+export default connect(mapStateToProps, { getTodos, deleteTodo })(Index);
 
 function Todo(props) {
   const todo = props.todo;
@@ -46,12 +46,20 @@ function Todo(props) {
   return (
     <tr>
       <td>
-        <Input type="checkbox" checked={todo.completed} />
+        <Input type="checkbox" />
       </td>
       <td>{todo.title}</td>
       <td>{todo.id}</td>
       <td>
-        <Button>Edit</Button> <Button color="danger">Delete</Button>
+        <Button>Edit</Button>{" "}
+        <Button
+          color="danger"
+          onClick={() => {
+            props.deleteTodo(todo);
+          }}
+        >
+          Delete
+        </Button>
       </td>
     </tr>
   );

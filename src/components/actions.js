@@ -16,3 +16,15 @@ export const addTodo = (todo) => {
     todo: todo,
   };
 };
+
+export const DELETE_TODO = "DELETE_TODO";
+export const deleteTodo = (todo) => {
+  const request = axios.get(
+    "https://jsonplaceholder.typicode.com/todos/" + todo.id
+  );
+  return {
+    type: DELETE_TODO,
+    todo: todo,
+    payload: request,
+  };
+};
