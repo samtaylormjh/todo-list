@@ -1,5 +1,3 @@
-https://jsonplaceholder.typicode.com/
-
 Please create the following pages
 
 1. Index, showing a list of Tasks
