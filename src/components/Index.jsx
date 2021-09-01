@@ -1,22 +1,22 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Container, Button, Table } from "reactstrap";
-import { connect } from "react-redux";
-import { getTodos, deleteTodo } from "./actions";
-import _ from "lodash";
+import { useEffect } from "react"
+import { Link } from "react-router-dom"
+import { Container, Button, Table } from "reactstrap"
+import { connect } from "react-redux"
+import { getTodos, deleteTodo } from "./actions"
+import _ from "lodash"
 
 function mapStateToProps(state) {
-  return { todos: state.todos };
+  return { todos: state.todos }
 }
 
 function Index(props) {
   useEffect(() => {
     if (props.todos.length === 0) {
-      props.getTodos();
+      props.getTodos()
     }
-  }, []);
+  }, [])
 
-  let sortedTodos = _.sortBy(props.todos, "id").reverse();
+  let sortedTodos = _.sortBy(props.todos, "id").reverse()
 
   return (
     <Container>
@@ -39,15 +39,15 @@ function Index(props) {
         </tbody>
       </Table>
     </Container>
-  );
+  )
 }
 
-export default connect(mapStateToProps, { getTodos, deleteTodo })(Index);
+export default connect(mapStateToProps, { getTodos, deleteTodo })(Index)
 
 function Todo(props) {
-  const todo = props.todo;
+  const todo = props.todo
   if (todo.completed === true) {
-    todo.completed = <div>&#10003;</div>;
+    todo.completed = <div>&#10003;</div>
   }
   return (
     <tr>
@@ -61,12 +61,12 @@ function Todo(props) {
         <Button
           color="danger"
           onClick={() => {
-            props.deleteTodo(todo);
+            props.deleteTodo(todo)
           }}
         >
           Delete
         </Button>
       </td>
     </tr>
-  );
+  )
 }

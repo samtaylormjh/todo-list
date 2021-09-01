@@ -1,33 +1,34 @@
-import { Form } from "react-final-form";
-import { Link } from "react-router-dom";
-import { Button, Container } from "reactstrap";
-import TodoForm from "./TodoForm";
-import { connect } from "react-redux";
-import { addTodo } from "./actions";
+import { Form } from "react-final-form"
+import { Link } from "react-router-dom"
+import { Button, Container } from "reactstrap"
+import TodoForm from "./TodoForm"
+import { connect } from "react-redux"
+import { addTodo } from "./actions"
 
 function mapStateToProps(state) {
-  return { todos: state.todos };
+  return { todos: state.todos }
 }
 
 function New(props) {
-  let { todos } = props;
+  let { todos } = props
   const submitHandler = (values) => {
     values = {
       userId: 1,
       id: Math.max.apply(
         Math,
         todos.map((t) => {
-          return t.id + 1;
+          return t.id + 1
         })
       ),
       title: values.todo,
       completed: false,
-    };
-    props.addTodo(values);
-    props.history.push("/");
-  };
+    }
+    props.addTodo(values)
+    props.history.push("/")
+  }
   return (
     <>
+      <h1>New Todo</h1>
       <br />
       <Form component={TodoForm} onSubmit={submitHandler} />
       <Container>
@@ -36,7 +37,7 @@ function New(props) {
         </Link>
       </Container>
     </>
-  );
+  )
 }
 
-export default connect(mapStateToProps, { addTodo })(New);
+export default connect(mapStateToProps, { addTodo })(New)
